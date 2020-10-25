@@ -6,6 +6,7 @@
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="android:colorBackground">@color/colorOnPrimary</item>
+        <item name="popupTheme">@style/actionMenu</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimaryVariant</item>
         <!-- MaterialDrawer specific values -->
