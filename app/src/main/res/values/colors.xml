@@ -5,6 +5,7 @@
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorOnPrimaryDark">#CDCDCD</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#CCCCCC</color>
     <!-- Material DEFAULT colors -->
     <color name="material_drawer_primary">#2196F3</color>
     <color name="material_drawer_primary_dark">#1976D2</color>
