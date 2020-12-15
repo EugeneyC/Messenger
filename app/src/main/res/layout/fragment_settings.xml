@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_margin"
         android:layout_marginTop="@dimen/vertical_large_margin"
-        android:text="Аккаунт"
+        android:text="@string/account"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/normalText"
         android:textStyle="bold"
