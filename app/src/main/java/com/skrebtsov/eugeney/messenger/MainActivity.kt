@@ -8,6 +8,8 @@ import com.skrebtsov.eugeney.messenger.activities.RegisterActivity
 import com.skrebtsov.eugeney.messenger.databinding.ActivityMainBinding
 import com.skrebtsov.eugeney.messenger.ui.fragmets.ChatsFragment
 import com.skrebtsov.eugeney.messenger.ui.objects.AppDrawer
+import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
+import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,12 +33,10 @@ class MainActivity : AppCompatActivity() {
         if (false) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatsFragment()).commit()
+            replaceFragment(ChatsFragment())
         }
         else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
     }
 

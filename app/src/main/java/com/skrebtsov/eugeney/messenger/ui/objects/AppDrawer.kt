@@ -13,6 +13,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.skrebtsov.eugeney.messenger.R
 import com.skrebtsov.eugeney.messenger.ui.fragmets.SettingsFragment
+import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
 class AppDrawer (var mainActivity: AppCompatActivity, var toolbar: Toolbar){
     private lateinit var mDrawer: Drawer
@@ -85,9 +86,7 @@ class AppDrawer (var mainActivity: AppCompatActivity, var toolbar: Toolbar){
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
                     when (position) {
-                        7 -> mainActivity.supportFragmentManager.beginTransaction()
-                            .addToBackStack(null)
-                            .replace(R.id.dataContainer, SettingsFragment()).commit()
+                        7 -> mainActivity.replaceFragment(SettingsFragment())
                     }
                     return false
                 }
