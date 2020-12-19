@@ -5,10 +5,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.skrebtsov.eugeney.messenger.MainActivity
 import com.skrebtsov.eugeney.messenger.R
 import com.skrebtsov.eugeney.messenger.activities.RegisterActivity
-import com.skrebtsov.eugeney.messenger.utilits.AUTH
-import com.skrebtsov.eugeney.messenger.utilits.AppTextWatcher
-import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
-import com.skrebtsov.eugeney.messenger.utilits.showToast
+import com.skrebtsov.eugeney.messenger.utilits.*
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 class EnterCodeFragment(val phoneNumber: String, val id: String) :
@@ -30,8 +27,21 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                showToast("Добро пожаловать")
-                (activity as RegisterActivity).replaceActivity(MainActivity())
+                val uid = AUTH.currentUser?.uid.toString()
+                val dataMap = mutableMapOf<String, Any>()
+                dataMap[CHILD_ID] = uid
+                dataMap[CHILD_PHONE] = phoneNumber
+                dataMap[CHILD_USERNAME] = uid
+                REF_DATABASE_ROOT.child(CHILD_ID).child(uid).updateChildren(dataMap)
+                    .addOnCompleteListener {
+                        if(it.isSuccessful){
+                            showToast("Добро пожаловать")
+                            (activity as RegisterActivity).replaceActivity(MainActivity())
+                        } else{
+                            showToast(it.exception?.message.toString())
+                        }
+                    }
+
             } else it.exception?.message.toString()
         }
     }

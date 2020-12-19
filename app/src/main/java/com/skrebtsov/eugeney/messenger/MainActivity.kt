@@ -10,13 +10,14 @@ import com.skrebtsov.eugeney.messenger.databinding.ActivityMainBinding
 import com.skrebtsov.eugeney.messenger.ui.fragmets.ChatsFragment
 import com.skrebtsov.eugeney.messenger.ui.objects.AppDrawer
 import com.skrebtsov.eugeney.messenger.utilits.AUTH
+import com.skrebtsov.eugeney.messenger.utilits.initFareBase
 import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
 import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mAppDrawer: AppDrawer
+    lateinit var mAppDrawer: AppDrawer
     private lateinit var mToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +46,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
-        AUTH = FirebaseAuth.getInstance()
+        initFareBase()
     }
 }
