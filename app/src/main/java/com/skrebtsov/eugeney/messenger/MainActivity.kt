@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.FirebaseAuth
 import com.skrebtsov.eugeney.messenger.activities.RegisterActivity
 import com.skrebtsov.eugeney.messenger.databinding.ActivityMainBinding
 import com.skrebtsov.eugeney.messenger.ui.fragmets.ChatsFragment
 import com.skrebtsov.eugeney.messenger.ui.objects.AppDrawer
+import com.skrebtsov.eugeney.messenger.utilits.AUTH
 import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
 import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
@@ -30,12 +32,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (false) {
+        if (AUTH.currentUser != null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment())
-        }
-        else {
+            replaceFragment(ChatsFragment(), false)
+        } else {
             replaceActivity(RegisterActivity())
         }
     }
@@ -44,5 +45,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
+        AUTH = FirebaseAuth.getInstance()
     }
 }

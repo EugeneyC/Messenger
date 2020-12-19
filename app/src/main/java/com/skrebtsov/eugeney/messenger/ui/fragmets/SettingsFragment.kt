@@ -2,7 +2,12 @@ package com.skrebtsov.eugeney.messenger.ui.fragmets
 
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import com.skrebtsov.eugeney.messenger.MainActivity
 import com.skrebtsov.eugeney.messenger.R
+import com.skrebtsov.eugeney.messenger.activities.RegisterActivity
+import com.skrebtsov.eugeney.messenger.utilits.AUTH
+import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
@@ -13,5 +18,15 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.settings_menu_exit -> {
+                AUTH.signOut()
+                (activity as MainActivity).replaceActivity(RegisterActivity())
+            }
+        }
+        return true
     }
 }
