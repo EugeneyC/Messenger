@@ -5,14 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.skrebtsov.eugeney.messenger.activities.RegisterActivity
 import com.skrebtsov.eugeney.messenger.databinding.ActivityMainBinding
+import com.skrebtsov.eugeney.messenger.models.User
 import com.skrebtsov.eugeney.messenger.ui.fragmets.ChatsFragment
 import com.skrebtsov.eugeney.messenger.ui.objects.AppDrawer
-import com.skrebtsov.eugeney.messenger.utilits.AUTH
-import com.skrebtsov.eugeney.messenger.utilits.initFareBase
-import com.skrebtsov.eugeney.messenger.utilits.replaceActivity
-import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
+import com.skrebtsov.eugeney.messenger.utilits.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,5 +48,13 @@ class MainActivity : AppCompatActivity() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar)
         initFareBase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent( AppValueEventListener {
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 }
