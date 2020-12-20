@@ -7,7 +7,7 @@
     tools:context=".ui.fragmets.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_header_bloc"
+        android:id="@+id/settings_header_bloc"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorPrimary"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/setting_user_photo"
+            android:id="@+id/settings_user_photo"
             android:layout_width="@dimen/settings_user_photo_width"
             android:layout_height="@dimen/settings_user_photo_height"
             android:layout_marginStart="@dimen/horizontal_margin"
@@ -38,8 +38,8 @@
             android:textSize="@dimen/normalText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/setting_user_photo"
-            app:layout_constraintTop_toTopOf="@+id/setting_user_photo" />
+            app:layout_constraintStart_toEndOf="@+id/settings_user_photo"
+            app:layout_constraintTop_toTopOf="@+id/settings_user_photo" />
 
         <TextView
             android:id="@+id/text_user_status"
@@ -50,12 +50,12 @@
             android:textColor="@color/colorOnPrimaryDark"
             android:textSize="@dimen/smallText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/setting_user_photo"
+            app:layout_constraintStart_toEndOf="@+id/settings_user_photo"
             app:layout_constraintTop_toBottomOf="@id/settings_full_name" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/setting_text_account"
+        android:id="@+id/settings_text_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_margin"
@@ -65,14 +65,14 @@
         android:textSize="@dimen/normalText"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_header_bloc" />
+        app:layout_constraintTop_toBottomOf="@id/settings_header_bloc" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_change_number_phone"
         style="@style/settingsButtons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_text_account">
+        app:layout_constraintTop_toBottomOf="@id/settings_text_account">
 
         <TextView
             android:id="@+id/settings_default_text_number"
@@ -155,15 +155,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/setting_change_photo"
+        android:id="@+id/settings_change_photo"
         android:layout_width="@dimen/settings_btn_change_photo_width"
         android:layout_height="@dimen/settings_btn_change_photo_height"
         android:src="@drawable/ic_camera"
         android:layout_marginEnd="@dimen/horizontal_margin"
         app:civ_circle_background_color="@color/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/setting_header_bloc"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_header_bloc"
         app:layout_constraintEnd_toEndOf="parent"
         app:civ_border_color="@color/colorGrey"
-        app:layout_constraintTop_toBottomOf="@+id/setting_header_bloc" />
+        app:layout_constraintTop_toBottomOf="@+id/settings_header_bloc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

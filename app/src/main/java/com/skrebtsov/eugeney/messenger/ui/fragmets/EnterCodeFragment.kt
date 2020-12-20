@@ -32,7 +32,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
                 dataMap[CHILD_ID] = uid
                 dataMap[CHILD_PHONE] = phoneNumber
                 dataMap[CHILD_USERNAME] = uid
-                REF_DATABASE_ROOT.child(CHILD_ID).child(uid).updateChildren(dataMap)
+                REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dataMap)
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             showToast("Добро пожаловать")
