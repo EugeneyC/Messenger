@@ -13,7 +13,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import com.skrebtsov.eugeney.messenger.R
-import com.skrebtsov.eugeney.messenger.ui.fragmets.SettingsFragment
+import com.skrebtsov.eugeney.messenger.ui.fragments.SettingsFragment
 import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
 class AppDrawer (var mainActivity: AppCompatActivity, var toolbar: Toolbar){

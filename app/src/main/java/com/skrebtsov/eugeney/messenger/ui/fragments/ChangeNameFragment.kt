@@ -1,9 +1,8 @@
-package com.skrebtsov.eugeney.messenger.ui.fragmets
+package com.skrebtsov.eugeney.messenger.ui.fragments
 
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.fragment.app.Fragment
 import com.skrebtsov.eugeney.messenger.MainActivity
 import com.skrebtsov.eugeney.messenger.R
 import com.skrebtsov.eugeney.messenger.utilits.*

@@ -1,4 +1,4 @@
-package com.skrebtsov.eugeney.messenger.ui.fragmets
+package com.skrebtsov.eugeney.messenger.ui.fragments
 
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException

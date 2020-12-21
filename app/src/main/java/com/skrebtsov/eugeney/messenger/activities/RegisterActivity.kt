@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.skrebtsov.eugeney.messenger.R
 import com.skrebtsov.eugeney.messenger.databinding.ActivityRegisterBinding
-import com.skrebtsov.eugeney.messenger.ui.fragmets.EnterPhoneNumberFragment
+import com.skrebtsov.eugeney.messenger.ui.fragments.EnterPhoneNumberFragment
 import com.skrebtsov.eugeney.messenger.utilits.initFareBase
 import com.skrebtsov.eugeney.messenger.utilits.replaceFragment
 
